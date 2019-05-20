@@ -24,8 +24,8 @@ philosophy and was one of the corner stones to Python's success story.
 Users didn't have to figure out how to download and install separate
 packages in order to write a simple web server or parse email.
 
-Times have changed. The introduction of the cheese shop (PyPI), setuptools,
-and later pip, it became simple and straight forward to download and install
+Times have changed. With the introduction of the cheese shop (PyPI), setuptools,
+and later pip, it became simple and straightforward to download and install
 packages. Nowadays Python has a rich and vibrant ecosystem of third party
 packages. It's pretty much standard to either install packages from PyPI or
 use one of the many Python or Linux distributions.
@@ -35,18 +35,18 @@ duplication of functionality, and dispensable features. This is undesirable
 for several reasons.
 
 * Any additional module increases the maintenance cost for the Python core
-  development team. The team has limited resources, reduced maintenance cost
+  development team. The team has limited resources; reduced maintenance cost
   frees development time for other improvements.
 * Modules in the standard library are generally favored and seen as the
   de-facto solution for a problem. A majority of users only pick 3rd party
-  modules to replace a stdlib module, when they have a compelling reason, e.g.
-  lxml instead of `xml`. The removal of an unmaintained stdlib module
-  increases the chances of a community contributed module to become widely
+  modules to replace a stdlib module when they have a compelling reason, e.g.,
+  using lxml instead of `xml`. The removal of an unmaintained stdlib module
+  increases the chances of a community-contributed module to become widely
   used.
 * A lean and mean standard library benefits platforms with limited resources
-  like devices with just a few hundred kilobyte of storage (e.g. BBC
+  like devices with just a few hundred kilobytes of storage (e.g. BBC
   Micro:bit). Python on mobile platforms like BeeWare or WebAssembly
-  (e.g. pyodide) also benefit from reduced download size.
+  (e.g. pyodide) also benefits from reduced download size.
 
 
 Deprecation schedule
@@ -60,12 +60,12 @@ a few months before Python 2.7 will reach its end of lifetime. We expect that
 Python 3.8 will be targeted by users that migrate to Python 3 in 2019 and
 2020. To reduce churn and to allow a smooth transition from Python 2,
 Python 3.8 will neither raise `DeprecationWarning` nor remove any
-modules that have been scheduled for removal. Instead deprecated modules will
-just be *documented* as deprecated. Optionally modules may emit a
+modules that have been scheduled for removal. Instead, deprecated modules will
+just be *documented* as deprecated. Optionally, modules may emit a
 `PendingDeprecationWarning`.
 
 All deprecated modules will also undergo a feature freeze. No additional
-features should be added. Bug should still be fixed.
+features should be added. Bugs should still be fixed.
 
 3.9
 ---
@@ -83,8 +83,8 @@ together with tests, documentation, and autoconf rules.
 Deprecated modules
 ==================
 
-The modules are grouped as data encoding, multimedia, network, OS interface,
-and misc modules. The majority of modules are for old data formats or
+The modules are grouped as data-encoding, multimedia, network, OS-interface,
+and miscellaneous modules. The majority of modules are for old data formats or
 old APIs. Some others are rarely useful and have better replacements on
 PyPI, e.g. Pillow for image processing or NumPy-based projects to deal with
 audio processing.
@@ -112,7 +112,7 @@ Substitute
 uu
 ~~
 
-The `uu <https://docs.python.org/3/library/uu.html>`_ module provides
+The `uu <https://docs.python.org/3/library/uu.html>`_ module provides the
 uuencode format, an old binary encoding format for email from 1980. The uu
 format has been replaced by MIME. The uu codec is provided by the binascii
 module.
@@ -153,7 +153,7 @@ aifc
 The `aifc <https://docs.python.org/3/library/aifc.html>`_ module provides
 support for reading and writing AIFF and AIFF-C files. The Audio Interchange
 File Format is an old audio format from 1988 based on Amiga IFF. It was most
-commonly used on the Apple Macintosh. These days only few specialized
+commonly used on the Apple Macintosh. These days only a few specialized
 application use AIFF.
 
 Module type
@@ -187,7 +187,7 @@ colorsys
 
 The `colorsys <https://docs.python.org/3/library/colorsys.html>`_ module
 defines color conversion functions between RGB, YIQ, HSL, and HSV coordinate
-systems. The Pillow library provides much faster conversation between
+systems. The Pillow library provides much faster conversion between
 color systems.
 
 Module type
@@ -203,7 +203,7 @@ chunk
 ~~~~~
 
 The `chunk <https://docs.python.org/3/library/chunk.html>`_ module provides
-support for reading and writing Electronic Arts' Interchange File Format.
+support for reading and writing Electronic Arts's Interchange File Format.
 IFF is an old audio file format originally introduced for Commodore and
 Amiga. The format is no longer relevant.
 
@@ -222,7 +222,7 @@ imghdr
 The `imghdr <https://docs.python.org/3/library/imghdr.html>`_ module is a
 simple tool to guess the image file format from the first 32 bytes
 of a file or buffer. It supports only a limited amount of formats and
-neither returns resolution nor color depth.
+returns neither resolution nor color depth.
 
 Module type
   pure Python
@@ -239,8 +239,8 @@ ossaudiodev
 The `ossaudiodev <https://docs.python.org/3/library/ossaudiodev.html>`_
 module provides support for Open Sound System, an interface to sound
 playback and capture devices. OSS was initially free software, but later
-support for newer sound devices and improvements were proprietary. Linux
-community abandoned OSS in favor of ALSA [1]_. Some operation systems like
+support for newer sound devices and improvements were proprietary. The Linux
+community abandoned OSS in favor of ALSA [1]_. Some operating systems like
 OpenBSD and NetBSD provide an incomplete [2]_ emulation of OSS.
 
 Module type
@@ -292,9 +292,9 @@ The `wave <https://docs.python.org/3/library/wave.html>`_ module provides
 support for the WAV sound format. The WAV format has been largely superseded
 by better codes that support lossless audio compression, e.g. FLAC.
 
-The *wave* module one of the three modules besides `aifc`_ and `sunau`_,
-that depend on `audioop`_. With deprecation of the other multimedia formats,
-it would be the last multimedia module.
+The *wave* module is one of the three modules that depend on `audioop`_
+(`aifc`_ and `sunau`_ are the others). With deprecation of the other
+multimedia formats, it would be the last multimedia module.
 
 Module type
   pure Python (depends on `audioop`_ C extension)
@@ -391,9 +391,9 @@ crypt
 ~~~~~
 
 The `crypt <https://docs.python.org/3/library/crypt.html>`_ module implements
-password hashing based on ``crypt(3)`` function from ``libcrypt`` or
-``libxcrypt`` on Unix-like platform. The algorithms are mostly old, of poor
-quality and insecure. Users are discouraged to use them.
+password hashing based on the ``crypt(3)`` function from ``libcrypt`` or
+``libxcrypt`` on Unix-like platforms. The algorithms are mostly old, of poor
+quality and insecure. Users are discouraged from using them.
 
 Module type
   C extension + Python module
@@ -409,7 +409,7 @@ macpath
 
 The `macpath <https://docs.python.org/3/library/macpath.html>`_ module
 provides Mac OS 9 implementation of os.path routines. Mac OS 9 is no longer
-supported
+supported.
 
 Module type
   pure Python
@@ -425,10 +425,10 @@ nis
 
 The `nis <https://docs.python.org/3/library/nis.html>`_ module provides
 NIS/YP support. Network Information Service / Yellow Pages is an old and
-deprecated directory service protocol developed by Sun Microsystems. It's
+deprecated directory service protocol developed by Sun Microsystems. Its
 designed successor NIS+ from 1992 never took off. For a long time, libc's
-Name Service Switch, LDAP, and Kerberos/GSSAPI are considered a more powerful
-and more secure replacement of NIS.
+Name Service Switch, LDAP, and Kerberos/GSSAPI have been considered more powerful
+and more secure replacements for NIS.
 
 Module type
   C extension
@@ -443,9 +443,9 @@ spwd
 ~~~~
 
 The `spwd <https://docs.python.org/3/library/spwd.html>`_ module provides
-direct access to Unix shadow password database using non-standard APIs.
+direct access to the Unix shadow password database using non-standard APIs.
 In general it's a bad idea to use the spwd. The spwd circumvents system
-security policies, it does not use the PAM stack, and is
+security policies, does not use the PAM stack, and is
 only compatible with local user accounts.
 
 Module type
@@ -464,9 +464,9 @@ fileinput
 ~~~~~~~~~
 
 The `fileinput <https://docs.python.org/3/library/fileinput.html>`_ module
-implements a helpers to iterate over a list of files from ``sys.argv``. The
-module predates the optparser and argparser module. The same functionality
-can be implemented with the argparser module.
+implements helpers to iterate over a list of files from ``sys.argv``. The
+module predates the optparse and argparse modules. The same functionality
+can be implemented with the argparse module.
 
 Module type
   pure Python
@@ -498,7 +498,7 @@ imp
 The `imp <https://docs.python.org/3/library/imp.html>`_ module is the
 predecessor of the
 `importlib <https://docs.python.org/3/library/importlib.html>`_ module. Most
-functions have been deprecated since Python 3.3 and the module since
+functions have been deprecated since Python 3.3 and the module itself since
 Python 3.4.
 
 Module type
@@ -516,12 +516,12 @@ msilib
 The `msilib <https://docs.python.org/3/library/msilib.html>`_ package is a
 Windows-only package. It supports the creation of Microsoft Installers (MSI).
 The package also exposes additional APIs to create cabinet files (CAB). The
-module is used to facilitate distutils to create MSI installers with
+module is used to facilitate distutils's creation of MSI installers with the
 ``bdist_msi`` command. In the past it was used to create CPython's official
 Windows installer, too.
 
 Microsoft is slowly moving away from MSI in favor of Windows 10 Apps (AppX)
-as new deployment model [3]_.
+as a new deployment model [3]_.
 
 Module type
   C extension + Python code
@@ -624,22 +624,22 @@ a place from which community members can pick up and fork code.
 
 Most of the modules are in pure Python and can be easily packaged. Some
 depend on a simple C module, e.g. `audioop`_ and `crypt`_. Since `audioop`_
-does not depend on any external libraries, it can be shipped in as binary
+does not depend on any external libraries, it can be shipped as binary
 wheels with some effort. Other C modules can be replaced with ctypes or cffi.
-For example I created `legacycrypt <https://github.com/tiran/legacycrypt>`_
-with ``_crypt`` extension reimplemented with a few lines of ctypes code.
+For example, I created `legacycrypt <https://github.com/tiran/legacycrypt>`_,
+which re-implements the ``_crypt`` extension in a few lines of ctypes code.
 
 
 PEP acceptance process
 ======================
 
-3.8.0b1 is scheduled to be release shortly after the PEP is officially
+3.8.0b1 is scheduled to be released shortly after the PEP is officially
 submitted. Since it's improbable that the PEP will pass all stages of the
-PEP process in time, I propose a two step acceptance process that is
-analogous Python's two release deprecation process.
+PEP process in time, I propose a two-step acceptance process that is
+analogous to Python's two-release deprecation process.
 
 The first *provisionally accepted* phase targets Python 3.8.0b1. In the first
-phase no code is changes or removed. Modules are only documented as
+phase no code is changed or removed. Modules are only documented as
 deprecated. The final decision can be delayed for another year.
 
 
@@ -647,13 +647,13 @@ Discussions
 ===========
 
 * Elana Hashman and Nick Coghlan suggested to keep the *getopt* module.
-* Berker Peksag proposed to deprecate and removed *msilib*.
+* Berker Peksag proposed to deprecate and remove *msilib*.
 * Brett Cannon recommended to delay active deprecation warnings and removal
   of modules like *imp* until Python 3.10. Version 3.8 will be released
-  shortly before Python 2 reaches end of lifetime. A delay reduced churn for
-  users that migrate from Python 2 to 3.8.
+  shortly before Python 2 reaches end of lifetime. A delay should provide
+  reduced churn for users that migrate from Python 2 to 3.8.
 * Brett also came up with the idea to keep lib2to3. The package is useful
-  for other purposes, e.g. `black <https://pypi.org/project/black/>`_ uses
+  for other purposes; e.g., `black <https://pypi.org/project/black/>`_ uses
   it to reformat Python code.
 * At one point, distutils was mentioned in the same sentence as this PEP.
   To avoid lengthy discussion and delay of the PEP, I decided against dealing
